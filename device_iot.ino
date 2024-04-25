@@ -134,14 +134,9 @@ void loop() {
 }
 
 void readHW040() {
-  // static int values[2];
   currentStateCLK = digitalRead(CLK);
 
   if (currentStateCLK != previousStateCLK)  {
-    // direction = digitalRead(DT) != currentStateCLK ? "0" : "1";
-    // counter += direction ? 1 : -1;
-    // encodir = direction ? "Left side" : "Right side";
-    // values = counter;
       if (digitalRead(DT) != currentStateCLK) {
         direction = "0";
         counter --;
@@ -157,6 +152,4 @@ void readHW040() {
   }
 
   previousStateCLK = currentStateCLK;
-
-  // return values;
 }
